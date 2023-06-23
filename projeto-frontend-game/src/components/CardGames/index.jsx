@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import api from "../../utils/api";
+import React from "react";
 import {  ContainerCard,  Description, Thumbnail, TitleVideo, Div, Text1, LinkStyle, ContainerBorder, Text2, Div2,  } from "./styles.jsx";
 
 

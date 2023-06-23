@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const ContainerBorder = styled.div`
-display: flex;
-     width: calc(25%); 
+    display: flex;
+    width: 320px; 
     height: 450px;
     background-color: transparent;
     border-radius: 10px;
@@ -15,10 +15,16 @@ display: flex;
     align-items: center;
     box-shadow:  0 0 15px 4px #808080;
     transition: box-shadow 0.3s ease-in-out;
-
-  &:hover {
+    @media (max-width: 768px) {
+    width: 300px;
+    }
+    @media (min-width: 1680px) {
+    width: 380px;
+    height: 510px;
+    }
+    &:hover {
     box-shadow: 0 0 15px 4px #17FDFA;
-  }
+    }
 `;
 
 export const ContainerCard = styled.div`

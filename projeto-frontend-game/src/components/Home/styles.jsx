@@ -1,8 +1,11 @@
 
-import styled from "styled-components";
+import styled , { keyframes }from "styled-components";
 
-export const Container = styled.div`
-    
+export const DivHeader = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 5rem;
 `;
 
 
@@ -36,14 +39,35 @@ export const Div = styled.div`
 export const TitleHome = styled.h1`
   margin-bottom: 4rem;
   color: #13bcd3;
-  border-bottom: 2px solid #313333;
 `;
 
 export const ContainerCards = styled.div`
   display: flex;
-  gap: 7rem;
+  gap: 5rem;
   margin: 0 auto;
   flex-wrap: wrap;
   justify-content: center;
- 
-`
+  @media (min-width: 1583px) {
+    gap: 7rem;
+    }
+    @media (min-width: 1680px) {
+    gap: 9rem;
+    }
+`;
+const loading = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const Loading = styled.div`
+  width: 50px;
+  height: 50px;
+  border: 4px solid #808080;
+  border-top-color: #13bcd3;
+  border-radius: 50%;
+  animation: ${loading} 1s infinite linear;
+`;
