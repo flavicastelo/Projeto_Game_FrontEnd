@@ -44,7 +44,7 @@ export const TitleHome = styled.h1`
 export const ContainerCards = styled.div`
   display: flex;
   gap: 5rem;
-  margin: 0 auto;
+  margin: 2rem auto;
   flex-wrap: wrap;
   justify-content: center;
   @media (min-width: 1583px) {
@@ -70,4 +70,13 @@ export const Loading = styled.div`
   border-top-color: #13bcd3;
   border-radius: 50%;
   animation: ${loading} 1s infinite linear;
+`;
+export const ContainerGenres = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: calc(100% - 10rem);
+    gap: 0.5rem;
+    margin: 0 auto;
+    justify-content: space-evenly;
 `;

@@ -9,8 +9,10 @@ import {
   ContainerCards,
   SectionHome,
   Loading,
-  DivHeader
+  DivHeader,
+  ContainerGenres
 } from "./styles";
+import GenresTag from "../Genres/index";
 
 export default function Home() {
   const [games, setGames] = useState([]);
@@ -19,6 +21,7 @@ export default function Home() {
   const [contentErro, setContentErro] = useState(false);
   const [query, setQuery] = useState('');
   const [uniqueGenres, setUniqueGenres] = useState([]);
+  const [queryGenre, setQueryGenre] = useState('');
 
   const getGames = async () => {
     try {
@@ -45,20 +48,26 @@ export default function Home() {
   }, [erro]);
 
   const lowerQuery = query.toLowerCase();
+  const lowerGenre = queryGenre.toLowerCase();
 
   const filteredGames = games.filter((game) =>
-    game.title.toLowerCase().includes(lowerQuery)
+    game.title.toLowerCase().includes(lowerQuery) && game.genre.toLowerCase().includes(lowerGenre),
+  
   );
 
   const onChange = (event) => {
     setQuery(event.target.value)
   };
+  useEffect(() => {
+    const genres = new Set(games.map((game) => game.genre));
+    setUniqueGenres([...genres]);
+    console.log([...genres]); // é necessário para garantir que uniqueGenres seja um array separado do array original genres.
+  }, [games]);
 
-    var genres = new Set(games.genres);
-    setUniqueGenres(genres);
-    console.log(genres);
-
-
+  const filterGenre = (uniqueGenre) => {
+    setQueryGenre(uniqueGenre);
+  }
+  
 
   return (
     <Main>
@@ -68,7 +77,9 @@ export default function Home() {
             <TitleHome>Projeto Frontend React</TitleHome>
             <Search query={query} onChange={onChange} />
           </DivHeader>
-
+          {loading ? '': erro ? (
+           ''
+          ) : <ContainerGenres>{uniqueGenres.map((uniqueGenre) => <GenresTag genre={uniqueGenre} onClick={filterGenre}/>)}</ContainerGenres>}
           <ContainerCards>
             {loading ? (
               <Loading />
