@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerBorder = styled.div`
     display: flex;
-    width: 320px; 
+    width: 350px;
     height: 450px;
     background-color: transparent;
     border-radius: 10px;
@@ -13,18 +13,30 @@ export const ContainerBorder = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    box-shadow:  0 0 15px 4px #808080;
     transition: box-shadow 0.3s ease-in-out;
-    @media (max-width: 768px) {
-    width: 300px;
-    }
-    @media (min-width: 1680px) {
-    width: 380px;
-    height: 510px;
-    }
     &:hover {
     box-shadow: 0 0 15px 4px #17FDFA;
     }
+    @media (max-width: 950px) {
+    width: 350px;
+   
+    }
+    @media (max-width: 480px) {
+      height: 400px;
+     
+    }
+    @media (max-width: 720px) {
+     justify-content: center;
+     
+    }
+    @media (max-width: 893px) {
+    width: 280px;
+    }
+    @media (min-width: 1753px) {
+    width: 400px;
+    height: 480px;
+    }
+    
 `;
 
 export const ContainerCard = styled.div`

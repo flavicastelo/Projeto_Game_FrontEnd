@@ -41,22 +41,8 @@ export default function CardGames({ games }) {
              {games.publisher}
             </Text1>
             </Div>
-           <Div>
-            <Text2>
-              Desenvolvedor: 
-            </Text2>
-            <Text1>
-             {games.developer}
-            </Text1>
-           </Div>
-           <Div>
-            <Text2>
-            Data de lançamento: 
-            </Text2>
-            <Text1>
-              {games.release_date}
-            </Text1>
-           </Div>
+          
+          
            <Div2>
            <LinkStyle target="_blank" href={games.freetogame_profile_url}>
              Perfil Freetogame

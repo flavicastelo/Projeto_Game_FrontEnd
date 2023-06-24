@@ -9,7 +9,10 @@ export const Input = styled.input`
   background-color: transparent;
   color: #808080;
   padding-left: 0.5rem;
-  margin-bottom: 2rem;
+  @media (max-width: 820px) {
+        margin-top: 1rem;
+    }
+    
   &:focus {
         outline: none;
         border-color: #13bcd3;
@@ -21,8 +24,20 @@ export const Icone = styled.img`
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 2.4rem;
-    right: 7.4rem;
+    top: 3rem;
+    right: 8.4rem;
+    @media (max-width: 1083px) {
+        right: 4.4rem;
+    }
+    @media (max-width: 820px) {
+        right: 16.6rem;
+        top: 11.6rem;
+    }
+    
+    @media (max-width: 767px) {
+       display: none;
+    }
+
 `;
 
 export const DivSearch = styled.div`
